@@ -6,9 +6,16 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   User,
-  Revenue,
+  Revenue
 } from './definitions';
 import { formatCurrency } from './utils';
+
+export async function fetchEmployee() {
+  const res  = await fetch("http://localhost:4567");
+  const data = await res.json();
+
+  return JSON.parse(data);
+}
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
